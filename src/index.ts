@@ -1,6 +1,11 @@
 import { Hono } from 'hono'
-
 const app = new Hono()
+app.get('/',c => {
+  return c.html("<h1>Make a post request to /</h1>")
+})
+
+
+
 
 app.post('/',async (c) => {
   const body = await c.req.json()
